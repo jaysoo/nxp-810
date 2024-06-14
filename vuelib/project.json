@@ -9,11 +9,13 @@
       "executor": "@nx/eslint:lint"
     },
     "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{projectRoot}/{options.outDir}",
+        "{workspaceRoot}/dist/vuelib"
+      ],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/vuelib"
+        "outDir": "../dist/vuelib"
       },
       "configurations": {
         "development": {
@@ -25,10 +27,12 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{projectRoot}/{options.coverage.reportsDirectory}",
+        "{workspaceRoot}/coverage/vuelib"
+      ],
       "options": {
-        "reportsDirectory": "../coverage/vuelib"
+        "coverage.reportsDirectory": "../coverage/vuelib"
       }
     }
   }

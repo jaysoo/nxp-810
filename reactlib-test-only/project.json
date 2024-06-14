@@ -9,10 +9,12 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "outputs": [
+        "{projectRoot}/{options.coverage.reportsDirectory}",
+        "{workspaceRoot}/coverage/reactlib-test-only"
+      ],
       "options": {
-        "reportsDirectory": "../coverage/reactlib-test-only"
+        "coverage.reportsDirectory": "../coverage/reactlib-test-only"
       }
     }
   }

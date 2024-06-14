@@ -17,7 +17,7 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [vue(), nxViteTsPaths()],
+  plugins: [vue(), nxViteTsPaths({ buildLibsFromSource: false })],
 
   // Uncomment this if you are using workers.
   // worker: {
