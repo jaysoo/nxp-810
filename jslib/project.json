@@ -10,14 +10,18 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/jslib"
+        "outputPath": "dist/jslib",
+        "tsConfig": "jslib/tsconfig.lib.json",
+        "skipTypeCheck": true
       },
       "configurations": {
         "development": {
-          "mode": "development"
+          "mode": "development",
+          "configFile": "jslib/vite.config.dev.ts"
         },
         "production": {
-          "mode": "production"
+          "mode": "production",
+          "configFile": "jslib/vite.config.prod.ts"
         }
       }
     },
@@ -25,6 +29,9 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
+        "watch": true,
+        "testFiles": ["jslib.spec.ts"],
+        "configFile": "jslib/vite.config.dev.ts",
         "reportsDirectory": "../coverage/jslib"
       }
     },

@@ -13,6 +13,7 @@
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/vueapp",
+        "buildLibsFromSource": false,
         "skipTypeCheck": true
       },
       "configurations": {
@@ -28,7 +29,8 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "vueapp:build"
+        "buildTarget": "vueapp:build",
+        "buildLibsFromSource": true
       },
       "configurations": {
         "development": {
