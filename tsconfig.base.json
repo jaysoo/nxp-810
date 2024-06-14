@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@vite1/jslib": ["jslib/src/index.ts"],
+      "@vite1/jslib-test-only": ["jslib-test-only/src/index.ts"],
+      "@vite1/reactlib": ["reactlib/src/index.ts"],
+      "@vite1/reactlib-test-only": ["reactlib-test-only/src/index.ts"],
+      "@vite1/vuelib": ["vuelib/src/index.ts"],
+      "@vite1/vuelib-test-only": ["vuelib-test-only/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,29 @@
+{
+  "name": "jslib-test-only",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "jslib-test-only/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/jslib-test-only",
+        "main": "jslib-test-only/src/index.ts",
+        "tsConfig": "jslib-test-only/tsconfig.lib.json",
+        "assets": ["jslib-test-only/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../coverage/jslib-test-only"
+      }
+    }
+  }
+}
