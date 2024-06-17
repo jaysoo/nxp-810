@@ -6,11 +6,13 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{projectRoot}/{options.outDir}",
+        "{workspaceRoot}/dist/reactapp"
+      ],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/reactapp"
+        "outDir": "../dist/reactapp"
       },
       "configurations": {
         "development": {
@@ -18,38 +20,6 @@
         },
         "production": {
           "mode": "production"
-        }
-      }
-    },
-    "serve": {
-      "executor": "@nx/vite:dev-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "reactapp:build"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "reactapp:build:development",
-          "hmr": true
-        },
-        "production": {
-          "buildTarget": "reactapp:build:production",
-          "hmr": false
-        }
-      }
-    },
-    "preview": {
-      "executor": "@nx/vite:preview-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "reactapp:build"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "reactapp:build:development"
-        },
-        "production": {
-          "buildTarget": "reactapp:build:production"
         }
       }
     },

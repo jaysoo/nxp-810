@@ -78,5 +78,17 @@
         "style": "css"
       }
     }
-  }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveStaticTargetName": "serve-static"
+      }
+    }
+  ]
 }
